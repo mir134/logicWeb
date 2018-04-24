@@ -1,0 +1,22 @@
+{
+    "apps" : [
+    {
+      "name"        : "logisticsweb",
+      "script"      : "./server.js",
+      "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      "merge_logs"      : true,
+      "out_file"   : "../logs/logis-out.log",
+      "error_file" : "../logs/logis-err.log",
+      "pid_file": "./logs/logisweb.pid",
+      "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules","logs"],
+      "watch"       : false,
+      "instances"   : 1,
+      "instance_id_env": "NODE_APP_INSTANCE",
+      "max_memory_restart" : "500M",
+      "exec_mode"  : "cluster", //cluster_mode //fork_mode
+      "env": {
+        "NODE_ENV": "production"        
+      }
+    }
+	]
+}
